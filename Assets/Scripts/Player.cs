@@ -30,7 +30,6 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            print("RightArrowPressed");
             vel.x = Speed;
         }
         if (Input.GetKey(KeyCode.LeftArrow))
