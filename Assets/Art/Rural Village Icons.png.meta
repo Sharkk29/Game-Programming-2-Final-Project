@@ -105,7 +105,7 @@ TextureImporter:
         width: 12
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -113,6 +113,27 @@ TextureImporter:
       bones: []
       spriteID: 62155b694be2729448ac875a0231014a
       internalID: -1945090242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rural Village Icons_1
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 547
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e82733302f4d09b46aa94154aab72893
+      internalID: -1548649088
       vertices: []
       indices: 
       edges: []
@@ -129,6 +150,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Rural Village Icons_0: -1945090242
+      Rural Village Icons_1: -1548649088
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
