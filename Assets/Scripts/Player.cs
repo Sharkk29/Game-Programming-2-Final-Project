@@ -4,47 +4,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    private Vector3 initialVelocity;
-    [SerializeField]
-    private Vector3 lastFrameVelocity;
-    private Rigidbody2D rb;
-
-    void Start()
-    {
-        
-    }
-
-    private void OnEnable()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        rb.velocity = initialVelocity;
-    }
-
-    public Rigidbody2D RB;
-    public float Speed = 5;
+    Vector2 movement;
+    public Rigidbody2D rb;
+    public float moveSpeed = 5;
+    public Animator animator;
     void Update()
     {
-        lastFrameVelocity = rb.velocity;
-        Vector2 vel = new Vector2(0, 0);
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            vel.x = Speed;
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            vel.x = -Speed;
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            vel.y = Speed;
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            vel.y = -Speed;
-        }
-        RB.velocity = vel;
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+    }
 
+    void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
